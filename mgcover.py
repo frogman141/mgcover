@@ -354,6 +354,8 @@ class CoverageAnalysis(object):
     def __init__(self, extract, pair, email, taxa, search_term, ref_genome, cache):
         self.r1 = extract
         self.r2 = pair
+        self.sai_one = cache + 'one.sai'
+        self.sai_two = cache + 'two.sai'
         self.email = email
         self.taxa = taxa
         self.search_term = search_term
@@ -464,12 +466,19 @@ class CoverageAnalysis(object):
         if not os.path.isfile(ref_fp + '.sa'):
             p = subprocess.Popen(["bwa", "index", ref_fp])
 
+    def prep_align(self, ref_fp):
+        """
+            Overview: This method is responsible for running the BWA aln command.
+        """
+        subprocess.call(["bwa", "aln", "-f", self.sai_one, ref_fp, self.r1])
+        subprocess.call(["bwa", "aln", "-f", self.sai_two, ref_fp, self.r2])
+
     def alignment(self, ref_fp):
         """
-            Overview: This method is reponsible for running the BWA mem command.
+            Overview: This method is reponsible for running the BWA sampe command.
         """
-        print "running mem algorithm"
-        subprocess.call(["bwa", "mem", '-o', self.cache + 'running.sam', ref_fp, self.r1, self.r2])
+        print "running aln algorithm"
+        subprocess.call(["bwa", "sampe", "-f", self.cache + 'running.sam', ref_fp, self.sai_one, self.sai_two, self.r1, self.r2])
         
     def convert_sort(self):
         """
@@ -509,6 +518,7 @@ class CoverageAnalysis(object):
             ref_fp = self.select_ref(choice)
 
         self.check_index(ref_fp)
+        self.prep_align(ref_fp)
         self.alignment(ref_fp)
         self.convert_sort()
         self.coverage_calc()
