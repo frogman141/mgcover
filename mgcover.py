@@ -320,9 +320,6 @@ class SeqProcessing(object):
         reference = self.ref_genome_search(annotations=df["semicolon separated list of annotations"].values)
 
         return pair_end, extract_end, reference
-        # except Exception as e:
-        #
-        #     self.error(e)
 
 
 
@@ -356,6 +353,11 @@ class CoverageAnalysis(object):
         self.r2 = pair
         self.sai_one = cache + 'one.sai'
         self.sai_two = cache + 'two.sai'
+        self.sam = cache + 'running.sam'
+        self.bam = cache + 'running_bam.bam'
+        self.bam_sorted = cache + 'running.sorted'
+
+        
         self.email = email
         self.taxa = taxa
         self.search_term = search_term
@@ -478,7 +480,7 @@ class CoverageAnalysis(object):
             Overview: This method is reponsible for running the BWA sampe command.
         """
         print "running aln algorithm"
-        subprocess.call(["bwa", "sampe", "-f", self.cache + 'running.sam', ref_fp, self.sai_one, self.sai_two, self.r1, self.r2])
+        subprocess.call(["bwa", "sampe", '-f', self.sam, ref_fp, self.sai_one, self.sai_two, self.r1, self.r2])
         
     def convert_sort(self):
         """
@@ -486,8 +488,10 @@ class CoverageAnalysis(object):
             sort it.
         """
         print "converting sams"
-        subprocess.call(['samtools', 'view', '-bS', '-o', self.cache + 'running.bam', self.cache + 'running.sam'])
-        subprocess.call(['samtools', 'sort', '-o', self.cache + 'running.bam.sorted', self.cache + 'running.bam'])
+        print self.bam
+        print self.bam_sorted
+        subprocess.call(['samtools', 'view', '-bS', '-o', self.bam, self.sam]) 
+        subprocess.call(['samtools', 'sort', self.bam, self.bam_sorted])
 
     def coverage_calc(self):
         """
@@ -495,11 +499,12 @@ class CoverageAnalysis(object):
             command.
         """
         print "calculating coverage"
-        with open(self.cache + self.file_coverage + '.coverage', 'wb') as cov:
-            cov.write(subprocess.check_output(['samtools', 'depth', self.cache + 'running.bam.sorted']))
+        coverage_file = self.cache + self.file_coverage + '.coverage'
+        with open(coverage_file, 'wb') as cov:
+            cov.write(subprocess.check_output(['samtools', 'depth', self.bam_sorted + '.bam']))
         
-        df = pd.read_csv(self.cache + self.file_coverage + '.coverage', names=['genomes', 'loci', 'depth'], sep='\t')
-        df.to_csv(self.cache + self.file_coverage + '.coverage', index=False)
+        df = pd.read_csv(coverage_file, names=['genomes', 'loci', 'depth'], sep='\t')
+        df.to_csv(coverage_file, index=False)
 
     def analysis(self):
         """
