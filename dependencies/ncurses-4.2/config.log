@@ -1,0 +1,415 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:622: checking host system type
+configure:713: checking for prefix
+configure:758: checking for gcc
+configure:835: checking whether the C compiler (gcc  ) works
+configure:849: gcc -o conftest    conftest.c  1>&5
+configure:869: checking whether the C compiler (gcc  ) is a cross-compiler
+configure:874: checking whether we are using GNU C
+configure:883: gcc -E conftest.c
+configure:898: checking whether gcc accepts -g
+configure:927: checking version of gcc
+configure:931: checking how to run the C preprocessor
+configure:952: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:993: checking whether gcc needs -traditional
+configure:1039: checking for POSIXized ISC
+configure:1062: checking for ldconfig
+configure:1092: checking if you want to build with C++
+configure:1109: checking for c++
+configure:1140: checking whether the C++ compiler (c++  ) works
+configure:1154: c++ -o conftest    conftest.C  1>&5
+configure:1180: checking whether the C++ compiler (c++  ) is a cross-compiler
+configure:1185: checking whether we are using GNU C++
+configure:1194: c++ -E conftest.C
+configure:1209: checking whether c++ accepts -g
+configure:1240: checking if you want to build programs such as tic
+configure:1263: checking for mawk
+configure:1292: checking whether make sets ${MAKE}
+configure:1329: checking for a BSD compatible install
+configure:1389: checking for long file names
+configure:1433: checking whether ln -s works
+configure:1456: checking for ranlib
+configure:1487: checking for tdlint
+configure:1487: checking for lint
+configure:1487: checking for alint
+configure:1520: checking for man
+configure:1520: checking for man_db
+configure:1555: checking for loader (symbol LD)
+configure:1569: checking for archiver (symbol AR)
+configure:1583: checking for archiver options (symbol AR_OPTS)
+configure:1595: checking for makeflags variable
+configure:1621: checking format of man-pages
+configure:1771: checking if you have specified an install-prefix
+configure:1796: checking if you want to build shared libraries
+configure:1810: checking if you want to build static libraries
+configure:1824: checking if you want to build debug libraries
+configure:1838: checking if you want to build profiling libraries
+configure:1852: checking if you want to build a separate terminfo library
+configure:1866: checking if you want to link with dbmalloc for testing
+configure:1928: checking if you want to link with dmalloc for testing
+configure:1990: checking if you want to link with the gpm mouse library
+configure:2095: checking for specified models
+configure:2170: checking if rpath option should be used
+configure:2337: checking if you wish to install ncurses overwriting curses
+configure:2353: checking where we will install curses.h
+configure:2357: checking if external terminfo-database is used
+configure:2374: checking if you want to build with function extensions
+configure:2391: checking for list of fallback descriptions
+configure:2413: checking if big-core option selected
+configure:2431: checking if you want termcap-fallback support
+configure:2499: checking for link
+configure:2527: gcc -o conftest -g -O2   conftest.c  1>&5
+configure:2499: checking for symlink
+configure:2527: gcc -o conftest -g -O2   conftest.c  1>&5
+configure:2575: checking if tic should use symbolic links
+configure:2599: checking if tputs should process BSD-style prefix padding
+configure:2617: checking for extended use of const keyword
+configure:2635: checking if RCS identifiers should be compiled-in
+configure:2654: checking if you want all experimental code
+configure:2668: checking if you want experimental hard-tabs code
+configure:2686: checking if you want experimental hashmap code
+configure:2703: checking if you want experimental safe-sprintf code
+configure:2721: checking if you want to experiment without scrolling-hints code
+configure:2739: checking if you want experimental SIGWINCH handler
+configure:2757: checking if you want experimental wide-character code
+configure:2775: checking if you want experimental xmc code
+configure:2879: checking for gcc __attribute__ directives
+checking for gcc __attribute__((scanf))
+configure:2919: gcc -c -g -O2  conftest.c 1>&5
+checking for gcc __attribute__((printf))
+configure:2919: gcc -c -g -O2  conftest.c 1>&5
+checking for gcc __attribute__((unused))
+configure:2919: gcc -c -g -O2  conftest.c 1>&5
+checking for gcc __attribute__((noreturn))
+configure:2919: gcc -c -g -O2  conftest.c 1>&5
+configure:2999: checking for gettimeofday
+configure:3027: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure:3097: checking for sin
+configure:3125: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure:3109:6: warning: conflicting types for built-in function 'sin'
+ char sin();
+      ^
+/tmp/ccvBjPV3.o: In function `main':
+/app/ncurses-4.2/configure:3119: undefined reference to `sin'
+collect2: error: ld returned 1 exit status
+configure: failed program was:
+#line 3102 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char sin(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char sin();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_sin) || defined (__stub___sin)
+choke me
+#else
+sin();
+#endif
+
+; return 0; }
+configure:3143: checking for sin in -lm
+configure:3162: gcc -o conftest -g -O2  -DNDEBUG  conftest.c -lm   1>&5
+configure:3155:6: warning: conflicting types for built-in function 'sin'
+ char sin();
+      ^
+configure:3188: checking for ANSI C header files
+configure:3201: gcc -E  -DNDEBUG conftest.c >/dev/null 2>conftest.out
+configure:3268: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure: In function 'main':
+configure:3263:67: warning: incompatible implicit declaration of built-in function 'exit'
+ if (XOR (islower (i), ISLOWER (i)) || toupper (i) != TOUPPER (i)) exit(2);
+                                                                   ^
+configure:3296: checking for dirent.h that defines DIR
+configure:3309: gcc -c -g -O2  -DNDEBUG conftest.c 1>&5
+configure:3334: checking for opendir in -ldir
+configure:3353: gcc -o conftest -g -O2  -DNDEBUG  conftest.c -ldir   1>&5
+/usr/bin/ld: cannot find -ldir
+collect2: error: ld returned 1 exit status
+configure: failed program was:
+#line 3342 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char opendir();
+
+int main() {
+opendir()
+; return 0; }
+configure:3418: checking for regular-expression headers
+configure:3437: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure:3534: checking for fcntl.h
+configure:3544: gcc -E  -DNDEBUG conftest.c >/dev/null 2>conftest.out
+configure:3534: checking for getopt.h
+configure:3544: gcc -E  -DNDEBUG conftest.c >/dev/null 2>conftest.out
+configure:3534: checking for libc.h
+configure:3544: gcc -E  -DNDEBUG conftest.c >/dev/null 2>conftest.out
+configure:3540:18: fatal error: libc.h: No such file or directory
+ #include <$ac_hdr>
+                  ^
+compilation terminated.
+configure: failed program was:
+#line 3539 "configure"
+#include "confdefs.h"
+#include <libc.h>
+configure:3534: checking for limits.h
+configure:3544: gcc -E  -DNDEBUG conftest.c >/dev/null 2>conftest.out
+configure:3534: checking for locale.h
+configure:3544: gcc -E  -DNDEBUG conftest.c >/dev/null 2>conftest.out
+configure:3534: checking for sys/bsdtypes.h
+configure:3544: gcc -E  -DNDEBUG conftest.c >/dev/null 2>conftest.out
+configure:3540:26: fatal error: sys/bsdtypes.h: No such file or directory
+ #include <$ac_hdr>
+                          ^
+compilation terminated.
+configure: failed program was:
+#line 3539 "configure"
+#include "confdefs.h"
+#include <sys/bsdtypes.h>
+configure:3534: checking for sys/ioctl.h
+configure:3544: gcc -E  -DNDEBUG conftest.c >/dev/null 2>conftest.out
+configure:3534: checking for sys/param.h
+configure:3544: gcc -E  -DNDEBUG conftest.c >/dev/null 2>conftest.out
+configure:3534: checking for poll.h
+configure:3544: gcc -E  -DNDEBUG conftest.c >/dev/null 2>conftest.out
+configure:3534: checking for sys/select.h
+configure:3544: gcc -E  -DNDEBUG conftest.c >/dev/null 2>conftest.out
+configure:3534: checking for sys/stropts.h
+configure:3544: gcc -E  -DNDEBUG conftest.c >/dev/null 2>conftest.out
+configure:3534: checking for sys/time.h
+configure:3544: gcc -E  -DNDEBUG conftest.c >/dev/null 2>conftest.out
+configure:3534: checking for sys/times.h
+configure:3544: gcc -E  -DNDEBUG conftest.c >/dev/null 2>conftest.out
+configure:3534: checking for termio.h
+configure:3544: gcc -E  -DNDEBUG conftest.c >/dev/null 2>conftest.out
+configure:3534: checking for termios.h
+configure:3544: gcc -E  -DNDEBUG conftest.c >/dev/null 2>conftest.out
+configure:3534: checking for ttyent.h
+configure:3544: gcc -E  -DNDEBUG conftest.c >/dev/null 2>conftest.out
+configure:3534: checking for unistd.h
+configure:3544: gcc -E  -DNDEBUG conftest.c >/dev/null 2>conftest.out
+configure:3534: checking for values.h
+configure:3544: gcc -E  -DNDEBUG conftest.c >/dev/null 2>conftest.out
+configure:3747: checking if sys/time.h works with sys/select.h
+configure:3768: gcc -c -g -O2  -DNDEBUG conftest.c 1>&5
+configure:3797: checking for working const
+configure:3851: gcc -c -g -O2  -DNDEBUG conftest.c 1>&5
+configure:3872: checking for inline
+configure:3886: gcc -c -g -O2  -DNDEBUG conftest.c 1>&5
+configure:3918: checking if unsigned literals are legal
+configure:3931: gcc -c -g -O2  -DNDEBUG conftest.c 1>&5
+configure:3949: checking for type of chtype
+configure:4004: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure: In function 'main':
+configure:3999:2: warning: incompatible implicit declaration of built-in function 'exit'
+  exit(0);
+  ^
+configure:4037: checking for number of bits in chtype
+configure:4069: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure: In function 'main':
+configure:4064:2: warning: incompatible implicit declaration of built-in function 'exit'
+  exit(0);
+  ^
+configure:4089: checking for width of character-index
+configure:4116: checking declaration of errno
+configure:4132: gcc -c -g -O2  -DNDEBUG conftest.c 1>&5
+configure:4204: checking if data-only library module links
+configure:4214: gcc -c -g -O2  -DNDEBUG conftest.c 1>&5
+ar: creating conftest.a
+configure:4233: gcc -c -g -O2  -DNDEBUG conftest.c 1>&5
+configure:4255: gcc -o conftest -g -O2  -DNDEBUG  conftest.c conftest.a  1>&5
+configure: In function 'main':
+configure:4250:3: warning: incompatible implicit declaration of built-in function 'exit'
+   exit (!testfunc());
+   ^
+configure:4279: checking for speed_t
+configure:4296: gcc -c -g -O2  -DNDEBUG conftest.c 1>&5
+configure:4339: checking for getttynam
+configure:4367: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure:4339: checking for memccpy
+configure:4367: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure:4339: checking for nanosleep
+configure:4367: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure:4339: checking for poll
+configure:4367: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure:4339: checking for remove
+configure:4367: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure:4339: checking for select
+configure:4367: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure:4339: checking for setbuf
+configure:4367: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure:4339: checking for setbuffer
+configure:4367: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure:4339: checking for setvbuf
+configure:4367: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure:4339: checking for sigaction
+configure:4367: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure:4339: checking for sigvec
+configure:4367: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure:4339: checking for strdup
+configure:4367: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure:4351:6: warning: conflicting types for built-in function 'strdup'
+ char $ac_func();
+      ^
+configure:4339: checking for tcgetattr
+configure:4367: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure:4339: checking for times
+configure:4367: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure:4339: checking for usleep
+configure:4367: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure:4339: checking for vfscanf
+configure:4367: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure:4351:6: warning: conflicting types for built-in function 'vfscanf'
+ char $ac_func();
+      ^
+configure:4339: checking for vsnprintf
+configure:4367: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure:4351:6: warning: conflicting types for built-in function 'vsnprintf'
+ char $ac_func();
+      ^
+configure:4339: checking for vsscanf
+configure:4367: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure:4351:6: warning: conflicting types for built-in function 'vsscanf'
+ char $ac_func();
+      ^
+configure:4439: checking for isascii
+configure:4452: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure:4473: checking whether sigaction needs _POSIX_SOURCE
+configure:4484: gcc -c -g -O2  -DNDEBUG conftest.c 1>&5
+configure:4531: checking whether termios.h needs _POSIX_SOURCE
+configure:4540: gcc -c -g -O2  -DNDEBUG conftest.c 1>&5
+configure:4583: checking whether setvbuf arguments are reversed
+configure:4605: gcc -o conftest -g -O2  -DNDEBUG  conftest.c  1>&5
+configure: In function 'main':
+configure:4598:23: warning: passing argument 2 of 'setvbuf' makes pointer from integer without a cast
+   if (setvbuf(stdout, _IOLBF, (char *) main, BUFSIZ) != 0)
+                       ^
+In file included from configure:4592:0:
+/usr/include/stdio.h:336:12: note: expected 'char * __restrict__' but argument is of type 'int'
+ extern int setvbuf (FILE *__restrict __stream, char *__restrict __buf,
+            ^
+configure:4598:31: warning: passing argument 3 of 'setvbuf' makes integer from pointer without a cast
+   if (setvbuf(stdout, _IOLBF, (char *) main, BUFSIZ) != 0)
+                               ^
+In file included from configure:4592:0:
+/usr/include/stdio.h:336:12: note: expected 'int' but argument is of type 'char *'
+ extern int setvbuf (FILE *__restrict __stream, char *__restrict __buf,
+            ^
+configure:4599:5: warning: incompatible implicit declaration of built-in function 'exit'
+     exit(1);
+     ^
+configure: failed program was:
+#line 4591 "configure"
+#include "confdefs.h"
+#include <stdio.h>
+/* If setvbuf has the reversed format, exit 0. */
+main () {
+  /* This call has the arguments reversed.
+     A reversed system may check and see that the address of main
+     is not _IOLBF, _IONBF, or _IOFBF, and return nonzero.  */
+  if (setvbuf(stdout, _IOLBF, (char *) main, BUFSIZ) != 0)
+    exit(1);
+  putc('\r', stdout);
+  exit(0);			/* Non-reversed systems segv here.  */
+}
+configure:4630: checking return type of signal handlers
+configure:4652: gcc -c -g -O2  -DNDEBUG conftest.c 1>&5
+configure:4672: checking for type sigaction_t
+configure:4686: gcc -c -g -O2  -DNDEBUG conftest.c 1>&5
+configure: In function 'main':
+configure:4682:1: error: unknown type name 'sigaction_t'
+ sigaction_t x
+ ^
+configure: failed program was:
+#line 4678 "configure"
+#include "confdefs.h"
+
+#include <signal.h>
+int main() {
+sigaction_t x
+; return 0; }
+configure:4706: checking declaration of size-change
+configure:4759: gcc -c -g -O2  -DNDEBUG conftest.c 1>&5
+size-change succeeded ()
+configure:4808: checking for c++
+configure:4849: checking for libg++
+configure:4862: c++ -o conftest -O2  -DNDEBUG  conftest.C  -lg++ -lm 1>&5
+configure:4855:21: fatal error: builtin.h: No such file or directory
+ #include <builtin.h>
+                     ^
+compilation terminated.
+configure: failed program was:
+#line 4853 "configure"
+#include "confdefs.h"
+
+#include <builtin.h>
+	
+int main() {
+float foo=abs(1.0)
+; return 0; }
+configure:4878: checking how to run the C++ preprocessor
+configure:4896: c++ -E  -DNDEBUG conftest.C >/dev/null 2>conftest.out
+configure:4918: checking for builtin.h
+configure:4928: c++ -E  -DNDEBUG conftest.C >/dev/null 2>conftest.out
+configure:4924:21: fatal error: builtin.h: No such file or directory
+ #include <$ac_hdr>
+                     ^
+compilation terminated.
+configure: failed program was:
+#line 4923 "configure"
+#include "confdefs.h"
+#include <builtin.h>
+configure:4918: checking for typeinfo
+configure:4928: c++ -E  -DNDEBUG conftest.C >/dev/null 2>conftest.out
+configure:4956: checking for builtin c++ bool type
+configure:4969: c++ -c -O2  -DNDEBUG conftest.C 1>&5
+configure:4989: checking for size of c++ bool
+configure:5027: c++ -o conftest -O2  -DNDEBUG  conftest.C  1>&5
+In file included from configure:5004:0:
+/usr/include/stdlib.h:543:70: error: declaration of 'void exit(int) throw ()' has a different exception specifier
+ extern void exit (int __status) __THROW __attribute__ ((__noreturn__));
+                                                                      ^
+configure:5001:17: error: from previous declaration 'void exit(int)'
+ extern "C" void exit(int);
+                 ^
+configure: failed program was:
+#line 4999 "configure"
+#include "confdefs.h"
+#ifdef __cplusplus
+extern "C" void exit(int);
+#endif
+
+#include <stdlib.h>
+#include <stdio.h>
+#if HAVE_BUILTIN_H
+#include <builtin.h>
+#endif
+main()
+{
+	FILE *fp = fopen("cf_test.out", "w");
+	if (fp != 0) {
+		bool x = true;
+		if ((-x) >= 0)
+			fputs("unsigned ", fp);
+		if (sizeof(x) == sizeof(int))       fputs("int",  fp);
+		else if (sizeof(x) == sizeof(char)) fputs("char", fp);
+		else if (sizeof(x) == sizeof(short))fputs("short",fp);
+		else if (sizeof(x) == sizeof(long)) fputs("long", fp);
+		fclose(fp);
+	}
+	exit(0);
+}
+		
+configure:5072: checking for gnatmake
+configure:5248: checking for library subsets
+configure:5310: checking for src modules

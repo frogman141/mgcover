@@ -355,7 +355,7 @@ class CoverageAnalysis(object):
         self.sai_two = cache + 'two.sai'
         self.sam = cache + 'running.sam'
         self.bam = cache + 'running_bam.bam'
-        self.bam_sorted = cache + 'running.sorted'
+        self.bam_sorted = cache + 'running.sorted.bam'
 
         
         self.email = email
@@ -470,7 +470,7 @@ class CoverageAnalysis(object):
 
     def prep_align(self, ref_fp):
         """
-            Overview: This method is responsible for running the BWA aln command.
+            Overview: This method is responsible for running the BWA 1 command.
         """
         subprocess.call(["bwa", "aln", "-f", self.sai_one, ref_fp, self.r1])
         subprocess.call(["bwa", "aln", "-f", self.sai_two, ref_fp, self.r2])
@@ -491,7 +491,7 @@ class CoverageAnalysis(object):
         print self.bam
         print self.bam_sorted
         subprocess.call(['samtools', 'view', '-bS', '-o', self.bam, self.sam]) 
-        subprocess.call(['samtools', 'sort', self.bam, self.bam_sorted])
+        subprocess.call(['samtools', 'sort', '-o', self.bam_sorted, self.bam])
 
     def coverage_calc(self):
         """
@@ -501,7 +501,7 @@ class CoverageAnalysis(object):
         print "calculating coverage"
         coverage_file = self.cache + self.file_coverage + '.coverage'
         with open(coverage_file, 'wb') as cov:
-            cov.write(subprocess.check_output(['samtools', 'depth', self.bam_sorted + '.bam']))
+            cov.write(subprocess.check_output(['samtools', 'depth', self.bam_sorted]))
         
         df = pd.read_csv(coverage_file, names=['genomes', 'loci', 'depth'], sep='\t')
         df.to_csv(coverage_file, index=False)
